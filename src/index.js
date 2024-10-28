@@ -1,6 +1,7 @@
 // change the opacity of background of #header when scrolling down
 const header = document.getElementById('header');
 const startFadingOffset = 10;
+const endFadingOffset = 160;
 const sectionElementToNav = new Map();
 
 let preventScrollEvent = false;
@@ -43,8 +44,7 @@ const switchActiveNavItem = (currentActiveNavItem) => {
 
 const updateNavBar = (force) => {
     const scrollY = window.scrollY;
-    const headerHeight = header.offsetHeight;
-    const opacity = Math.max(0, Math.min(1, (scrollY - startFadingOffset) / (headerHeight - startFadingOffset)));
+    const opacity = Math.max(0, Math.min(1, (scrollY - startFadingOffset) / (endFadingOffset - startFadingOffset)));
     header.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
 
     if (force) preventScrollEvent = false;
@@ -79,7 +79,7 @@ updateNavBar();
 const talkChoicesElements = document.querySelectorAll('.talk-choices > li');
 const talkContentElement = document.querySelector('.talk-content');
 const talkInfoDict = {
-    title: '.title-text > div:first-child',
+    title: '.talk-title-text > div:first-child',
     speaker: '.speaker-text > div:nth-child(2)',
     abstract: '.talk-abstract-text > div:nth-child(2)',
     bio: '.speaker-bio-text > div:nth-child(2)',
@@ -140,3 +140,19 @@ talkChoicesElements.forEach((element, i) => {
 });
 
 switchToTalk(0);
+
+/* title scaling */
+
+const titleScalingUntilScrollY = 160;
+const titleElement = document.querySelector('.title-text');
+const titleDescElement = document.querySelector('.title-desc');
+
+const scaleTitle = () => {
+    const scrollY = window.scrollY;
+    const scaleRatio = 1.1 - 0.1 * Math.min(1, scrollY / titleScalingUntilScrollY);
+    const translateYPixel = Math.min(titleScalingUntilScrollY, scrollY) / 2;
+    titleElement.style.transform = `scale(${scaleRatio}) translateY(${translateYPixel}px)`;
+    titleDescElement.style.transform = `scale(${scaleRatio}) translateY(${translateYPixel}px)`;
+};
+
+window.addEventListener('scroll', () => { scaleTitle(); });
