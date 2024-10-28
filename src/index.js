@@ -31,9 +31,7 @@ document.querySelectorAll('.nav-bar ul li').forEach((li) => {
     });
 })
 
-
-
-lastActiveNavItem = undefined;
+let lastActiveNavItem = undefined;
 
 const switchActiveNavItem = (currentActiveNavItem) => {
     if (currentActiveNavItem != lastActiveNavItem) {
