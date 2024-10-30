@@ -209,9 +209,9 @@ main > section:not(:last-child) {
 
 .speaker-card {
     margin: 0.8em;
-    padding: 1em;
-    width: 13em;
-    height: 21em;
+    padding: 1.5em;
+    width: 12em;
+    min-height: 21.27em;
 
     box-shadow: 4px 4px 3px grey;
     border: 2px solid rgba(211, 211, 211, 0.6);
@@ -247,8 +247,11 @@ main > section:not(:last-child) {
     opacity: 1;
 }
 
+.speaker-title {
+}
+
 .speaker-org {
-    margin-top: 0.5em;
+    margin-top: 1em;
 }
 
 .photo-wrapper {
