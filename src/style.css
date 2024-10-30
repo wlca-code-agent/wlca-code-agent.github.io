@@ -220,6 +220,10 @@ main > section:not(:last-child) {
     transition: border 0.2s;
 }
 
+.speaker-card.active {
+    border: 2px solid var(--secondary-color);
+}
+
 .speaker-name {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bold;
