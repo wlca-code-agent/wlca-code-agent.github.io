@@ -156,3 +156,13 @@ const scaleTitle = () => {
 };
 
 window.addEventListener('scroll', () => { scaleTitle(); });
+
+document.querySelectorAll('.speaker-name > a').forEach((a) => {
+    const homeIcon = a.querySelector('span');
+    a.addEventListener('mouseover', () => {
+        homeIcon.classList.add('active');
+    });
+    a.addEventListener('mouseleave', () => {
+        homeIcon.classList.remove('active');
+    });
+});

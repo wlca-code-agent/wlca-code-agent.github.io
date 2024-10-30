@@ -183,6 +183,9 @@ main > section:not(:last-child) {
 
 .card-list {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .overview-text {
@@ -205,9 +208,10 @@ main > section:not(:last-child) {
 }
 
 .speaker-card {
-    margin: 0.5em;
+    margin: 0.8em;
     padding: 1em;
     width: 13em;
+    height: 21em;
 
     box-shadow: 4px 4px 3px grey;
     border: 2px solid rgba(211, 211, 211, 0.6);
@@ -216,28 +220,45 @@ main > section:not(:last-child) {
     transition: border 0.2s;
 }
 
-.speaker-card:hover {
-    border: 2px solid var(--secondary-color);
-}
-
 .speaker-name {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bold;
     margin-top: 1em;
 }
 
+.speaker-name > a {
+    text-decoration: none;
+    color: black;
+    transition: color 0.2s;
+}
+
+.speaker-name > a:hover {
+    color: var(--secondary-color);
+}
+
+.speaker-name > a > span {
+    font-size: 1.2em;
+    vertical-align: text-top;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.speaker-name > a > span.active {
+    opacity: 1;
+}
+
 .speaker-org {
     margin-top: 0.5em;
 }
 
-.portrait-wrapper {
+.photo-wrapper {
     width: 100%;
     aspect-ratio: 1/1;
     overflow: hidden;
     text-align: center;
 }
 
-.portrait {
+.photo {
     width: 100%;
 }
 
