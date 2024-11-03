@@ -4,8 +4,8 @@
 
 // change the opacity of background of nav bar when scrolling down
 const header = document.getElementById('header');
-const startFadingOffset = 10;
-const endFadingOffset = 160;
+const startFadingOffset = 0;
+const endFadingOffset = 1;
 const sectionElementToNav = new Map();
 
 let preventScrollEvent = false;
@@ -185,7 +185,7 @@ switchToTalk(0);
     title scaling animation
 */
 
-const titleScalingUntilScrollY = 160;
+const titleScalingUntilScrollY = 120;
 const titleElement = document.querySelector('.title-text');
 const titleDescElement = document.querySelector('.title-desc');
 

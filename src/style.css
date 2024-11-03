@@ -19,6 +19,8 @@ header {
 
     display: flex;
     justify-content: center;
+
+    transition: background 0.2s;
 }
 
 .inline-round-text {
@@ -97,20 +99,18 @@ header {
 }
 
 .title {
-    padding: 10em 0 16em 0;
+    padding: 8em 0 12em 0;
     position: relative;
 
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    background-color: var(--primary-color);
     color: white;
     overflow: hidden;
-    /* background-image: url('assets/digital-art-volcano-illustrated.jpg'); */
     background-size: cover;
-
-    mask-image: linear-gradient(black, black 80%, transparent);
+    background-position: 50% 50%;
+    background: linear-gradient(180deg, rgba(181,108,0,1) 0%, rgba(255,188,65,1) 90%, rgba(252,183,52,0) 100%);
 }
 
 .title h1 {
@@ -334,6 +334,7 @@ main > section:not(:last-child) {
 
 .schedule-table {
     border-collapse: collapse;
+    width: 100%
 }
 
 .schedule-table th, .schedule-table td {
