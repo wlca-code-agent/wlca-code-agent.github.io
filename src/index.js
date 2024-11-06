@@ -4,8 +4,8 @@
 
 // change the opacity of background of nav bar when scrolling down
 const header = document.getElementById('header');
-const startFadingOffset = 0;
-const endFadingOffset = 1;
+const startFadingOffset = 50;
+const endFadingOffset = 51;
 const sectionElementToNav = new Map();
 
 let preventScrollEvent = false;
