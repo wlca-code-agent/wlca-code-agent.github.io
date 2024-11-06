@@ -224,8 +224,17 @@ main > section:not(:last-child) {
 }
 
 #speakers-section .section-content {
-    align-items: center;
-    flex-direction: column;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.card-list {
+    flex: 1 1 30em;
+}
+
+.talk-content-wrapper {
+    flex: 1 1 30em;
 }
 
 .speaker-card {
@@ -323,9 +332,9 @@ main > section:not(:last-child) {
 }
 
 .talk-content {
-    margin: 3em 1em;
+    margin: 2em 2em;
+    padding: 0 1.5em;
     border-left: 5px solid var(--secondary-color);
-    max-width: 80em;
     height: fit-content;
     
     transition: opacity 0.1s;
@@ -337,10 +346,6 @@ main > section:not(:last-child) {
 
 .talk-content-section:not(:first-child) {
     margin-top: 1em;
-}
-
-.talk-content-section {
-    padding: 0 1em 0.2em;
 }
 
 .talk-content-section > div:first-child {
