@@ -177,29 +177,29 @@ const switchToTalk = async (num, doScroll) => {
     title scaling animation
 */
 
-const titleScalingUntilScrollY = 120;
-const titleElement = document.querySelector('.title-text');
-const titleDescElement = document.querySelector('.title-desc');
+// const titleScalingUntilScrollY = 120;
+// const titleElement = document.querySelector('.title-text');
+// const titleDescElement = document.querySelector('.title-desc');
 
-const scaleTitle = () => {
-    const scrollY = window.scrollY;
-    const scaleRatio = 1.1 - 0.1 * Math.min(1, scrollY / titleScalingUntilScrollY);
-    const translateYPixel = Math.min(titleScalingUntilScrollY, scrollY) / 2;
-    titleElement.style.transform = `scale(${scaleRatio}) translateY(${translateYPixel}px)`;
-    titleDescElement.style.transform = `scale(${scaleRatio}) translateY(${translateYPixel}px)`;
-};
+// const scaleTitle = () => {
+//     const scrollY = window.scrollY;
+//     const scaleRatio = 1.1 - 0.1 * Math.min(1, scrollY / titleScalingUntilScrollY);
+//     const translateYPixel = Math.min(titleScalingUntilScrollY, scrollY) / 2;
+//     titleElement.style.transform = `scale(${scaleRatio}) translateY(${translateYPixel}px)`;
+//     titleDescElement.style.transform = `scale(${scaleRatio}) translateY(${translateYPixel}px)`;
+// };
 
-window.addEventListener('scroll', () => { scaleTitle(); });
+// window.addEventListener('scroll', () => { scaleTitle(); });
 
-document.querySelectorAll('.speaker-name > a').forEach((a) => {
-    const homeIcon = a.querySelector('.material-symbols-outlined');
-    a.addEventListener('mouseover', () => {
-        homeIcon.classList.add('active');
-    });
-    a.addEventListener('mouseleave', () => {
-        homeIcon.classList.remove('active');
-    });
-});
+// document.querySelectorAll('.speaker-name > a').forEach((a) => {
+//     const homeIcon = a.querySelector('.material-symbols-outlined');
+//     a.addEventListener('mouseover', () => {
+//         homeIcon.classList.add('active');
+//     });
+//     a.addEventListener('mouseleave', () => {
+//         homeIcon.classList.remove('active');
+//     });
+// });
 
 /*
     link from speaker to talks
