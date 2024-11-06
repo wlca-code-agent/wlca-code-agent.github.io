@@ -4,10 +4,12 @@
     "bootstrap": "^5.3.3"
   },
   "devDependencies": {
+    "http-server": "^14.1.1",
     "parcel": "^2.12.0"
   },
   "scripts": {
     "dev": "npx parcel src/index.html",
-    "build": "npx parcel build src/index.html --dist-dir release --no-source-maps"
+    "build": "rm -rf release && parcel build src/index.html --dist-dir release --no-source-maps",
+    "inspect-release": "npx http-server release"
   }
 }
