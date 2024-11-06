@@ -191,15 +191,19 @@ const switchToTalk = async (num, doScroll) => {
 
 // window.addEventListener('scroll', () => { scaleTitle(); });
 
-// document.querySelectorAll('.speaker-name > a').forEach((a) => {
-//     const homeIcon = a.querySelector('.material-symbols-outlined');
-//     a.addEventListener('mouseover', () => {
-//         homeIcon.classList.add('active');
-//     });
-//     a.addEventListener('mouseleave', () => {
-//         homeIcon.classList.remove('active');
-//     });
-// });
+/*
+    speaker name animation
+*/
+
+document.querySelectorAll('.speaker-name > a').forEach((a) => {
+    const homeIcon = a.querySelector('.material-symbols-outlined');
+    a.addEventListener('mouseover', () => {
+        homeIcon.classList.add('active');
+    });
+    a.addEventListener('mouseleave', () => {
+        homeIcon.classList.remove('active');
+    });
+});
 
 /*
     link from speaker to talks
