@@ -18,9 +18,6 @@
                     <a class="nav-text" href="#speakers-section">Speakers</a>
                 </li>
                 <li>
-                    <a class="nav-text" href="#talks-section">Talks</a>
-                </li>
-                <li>
                     <a class="nav-text" href="#schedule-section">Schedule</a>
                 </li>
                 <li>
@@ -52,21 +49,6 @@
                 <div class="card-list">
                     <div class="speaker-card">
                         <div class="photo-wrapper">
-                            <img class="photo" src="assets/photos/zhangtianwei.jpg"/>
-                        </div>
-                        <div class="speaker-name">
-                            <a href="https://personal.ntu.edu.sg/tianwei.zhang/" title="Go To Homepage">
-                                Tianwei Zhang
-                                <span class="material-symbols-outlined" >
-                                    house
-                                </span>
-                            </a>
-                        </div>
-                        <div class="speaker-title">Associate Professor</div>
-                        <div class="speaker-org">Nanyang Technological University</div>
-                    </div>
-                    <div class="speaker-card">
-                        <div class="photo-wrapper">
                             <img class="photo" src="assets/photos/xiexiaofei.jpg"/>
                         </div>
                         <div class="speaker-name">
@@ -79,6 +61,21 @@
                         </div>
                         <div class="speaker-title">Assistant Professor</div>
                         <div class="speaker-org">Singapore Management University</div>
+                    </div>
+                    <div class="speaker-card">
+                        <div class="photo-wrapper">
+                            <img class="photo" src="assets/photos/zhangtianwei.jpg"/>
+                        </div>
+                        <div class="speaker-name">
+                            <a href="https://personal.ntu.edu.sg/tianwei.zhang/" title="Go To Homepage">
+                                Tianwei Zhang
+                                <span class="material-symbols-outlined" >
+                                    house
+                                </span>
+                            </a>
+                        </div>
+                        <div class="speaker-title">Associate Professor</div>
+                        <div class="speaker-org">Nanyang Technological University</div>
                     </div>
                     <div class="speaker-card">
                         <div class="photo-wrapper">
@@ -126,28 +123,23 @@
                         <div class="speaker-org">National University of Singapore</div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <section id="talks-section">
-            <h3 class="section-title">Talks</h3>
-            <div class="section-content">
-                <ul class="talk-choices">
-                </ul>
-                <div class="talk-content">
-                    <div class="talk-content-section talk-title-text">
-                        <div>CoEdPilot: Recommending Code Edits with Learned Prior Edit Relevance, Project-wise Awareness, and Interactive Nature</div>
-                    </div>
-                    <div class="talk-content-section speaker-text">
-                        <div>Speaker</div>
-                        <div>Chenyan Liu</div>
-                    </div>
-                    <div class="talk-content-section talk-abstract-text">
-                        <div>Abstract</div>
-                        <div>Incremental code edits are more frequent than generating new code in software projects. To automate this process, existing language model-based solutions focus primarily on generating edit solutions based on given location and relevant prior edits. However, editing tasks can be more complicated: It is non-trivial to infer the subsequent edit location, as the scope of edit ripple effect can be the whole project. Moreover, editing sessions may contain multiple (ir)relevant edits. In this talk, I will share our work CoEdPilot, a LLM-driven framework for code evolution assistance. CoEdPilot orchestrates a set of neural Transformers, for discriminating relevant edits, monitoring the ripple effects of edits, exploring their interactive natures and generating edit solution. We also implement CoEdPilot as a VS Code extension for user-friendly interaction.</div>
-                    </div>
-                    <div class="talk-content-section speaker-bio-text">
-                        <div>Bio</div>
-                        <div>Chenyan Liu is currently a PhD student at School of Computing, National University of Singapore. He is supervised by Dr. Yun LIN, Dr. Jin Song DONG and Dr. ZhiYong HUANG. He received his Bachelor’s degree at Huazhong University of Science and Technology in 2021 and Master’s degree at National University of Singapore in 2023. His research focuses on the design and evaluation of code evolution systems.</div>
+                <div class="talk-content-wrapper">
+                    <div class="talk-content">
+                        <div class="talk-content-section talk-title-text">
+                            <div>CoEdPilot: Recommending Code Edits with Learned Prior Edit Relevance, Project-wise Awareness, and Interactive Nature</div>
+                        </div>
+                        <div class="talk-content-section speaker-text">
+                            <div>Speaker</div>
+                            <div>Chenyan Liu</div>
+                        </div>
+                        <div class="talk-content-section talk-abstract-text">
+                            <div>Abstract</div>
+                            <div>Incremental code edits are more frequent than generating new code in software projects. To automate this process, existing language model-based solutions focus primarily on generating edit solutions based on given location and relevant prior edits. However, editing tasks can be more complicated: It is non-trivial to infer the subsequent edit location, as the scope of edit ripple effect can be the whole project. Moreover, editing sessions may contain multiple (ir)relevant edits. In this talk, I will share our work CoEdPilot, a LLM-driven framework for code evolution assistance. CoEdPilot orchestrates a set of neural Transformers, for discriminating relevant edits, monitoring the ripple effects of edits, exploring their interactive natures and generating edit solution. We also implement CoEdPilot as a VS Code extension for user-friendly interaction.</div>
+                        </div>
+                        <div class="talk-content-section speaker-bio-text">
+                            <div>Bio</div>
+                            <div>Chenyan Liu is currently a PhD student at School of Computing, National University of Singapore. He is supervised by Dr. Yun LIN, Dr. Jin Song DONG and Dr. ZhiYong HUANG. He received his Bachelor’s degree at Huazhong University of Science and Technology in 2021 and Master’s degree at National University of Singapore in 2023. His research focuses on the design and evaluation of code evolution systems.</div>
+                        </div>
                     </div>
                 </div>
             </div>

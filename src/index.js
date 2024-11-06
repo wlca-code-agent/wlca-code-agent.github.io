@@ -111,6 +111,18 @@ const talkInfoList = [
         bio: `Dr. Xiaofei Xie is an Assistant Professor and  Lee Kong Chian Fellow at Singapore Management University. He obtained his Ph.D from Tianjin University and won the CCF Outstanding Doctoral Dissertation Award (2019) in China. Previously, he was a Wallenberg-NTU Presidential Postdoctoral Fellow at NTU. His research mainly focuses on the quality assurance of both traditional software and AI-enabled software. He has published top-tier conference/journal papers in the areas of software engineering, security and AI. In particular, he has received four ACM SIGSOFT Distinguished Paper Awards (FSE'16, ASE '19, ISSTA '22 and ASE '23) and a APSEC Best Paper Award.`
     },
     {
+        title: 'Evaluating and Harnessing Large Language Models for Automated Penetration Testing',
+        speaker: 'Tianwei Zhang',
+        abstract: 'Penetration testing, a crucial industrial practice for ensuring system security, has traditionally resisted automation due to the extensive expertise required by human professionals. Large Language Models (LLMs) have shown significant advancements in various domains, and their emergent abilities suggest their potential to revolutionize industries. In this work, we establish a comprehensive benchmark using real-world penetration testing targets and further use it to explore the capabilities of LLMs in this domain. Our findings reveal that while LLMs demonstrate proficiency in specific sub-tasks within the penetration testing process, such as using testing tools, interpreting outputs, and proposing subsequent actions, they also encounter difficulties maintaining a whole context of the overall testing scenario. Based on these insights, we introduce PENTESTGPT, an LLM-empowered automated penetration testing framework that leverages the abundant domain knowledge inherent in LLMs. PENTESTGPT is meticulously designed with three self-interacting modules, each addressing individual sub-tasks of penetration testing, to mitigate the challenges related to context loss. It not only outperforms LLMs among the benchmark targets, but also proves effective in tackling real-world penetration testing targets and CTF challenges. Having been open-sourced on GitHub, PENTESTGPT has garnered over 6,500 stars in 12 months and fostered active community engagement, attesting to its value and impact in both the academic and industrial spheres.',
+        bio: `Dr. Tianwei Zhang is currently an associate professor at College of Computing and Data Science, Nanyang Technological University, Singapore. He received his Bachelor's degree at Peking University in 2011, and Ph.D degree at Princeton University in 2017. His research focuses on building efficient and trustworthy computer systems. He has been involved in the organization committee of numerous technical conferences, including serving as the general chair of KSEM'22. He serves on the editorial board of IEEE Transactions on Circuits and Systems for Video Technology (TCSVT) since 2021, and receives the best editor award in 2023. He has published more than 150 papers in top-tier security, AI, and system conferences and journals. He has received several research awards, including Distinguished Paper Award @ ASPLOS'23, Distinguished Paper Award @ ACL'24, Distinguished Artifact Award @ Usenix Security'24, Distinguished Artifact Award @ CCS'24. `
+    },
+    {
+        title: 'Automated Generation of Formal Program Specifications via Large Language Models',
+        speaker: 'Yi Li',
+        abstract: 'In the software development process, formal program specifications play a crucial role in various stages, including requirement analysis, software testing, and verification. However, manually crafting program specifications is rather difficult, making the job time-consuming and labour-intensive. To tackle this challenge, we introduce SpecGen, a novel technique for formal program specification generation based on Large Language Models (LLMs). Our key insight is to overcome the limitations of existing methods by leveraging the code comprehension capability of LLMs. The process of SpecGen consists of two phases. The first phase employs a conversational approach that guides the LLM to generate appropriate specifications for a given program, aiming to utilize the ability of LLM to generate high-quality specifications. The second phase, designed for where the LLM fails to generate correct specifications, applies four mutation operators to the model-generated specifications and selects verifiable specifications from the mutated ones through a novel heuristic selection strategy by assigning different weights of variants in an efficient manner. We evaluate SpecGen on two datasets, including the SV-COMP Java category benchmark and a manually constructed dataset containing 120 programs. Experimental results demonstrate that SpecGen succeeds in generating verifiable specifications for 279 out of 385 programs, outperforming the existing purely LLM-based approaches and conventional specification generation tools like Houdini and Daikon. Further investigations on the quality of generated specifications indicate that SpecGen can comprehensively articulate the behaviors of the input program.',
+        bio: `Yi Li is an Associate Professor at the College of Computing and Data Science, Nanyang Technological University (NTU) and an Associate Director of the NTU Centre in Computational Technologies for Finance (CCTF). Dr Li has been leading the Software Reliability and Security Lab (SRSLab@NTU) since 2018. His research interests are in program analysis and automated reasoning techniques with applications in software engineering and software security. Together with his research team, he develops solutions enabling the construction of high-quality software systems that are both reliable and sustainable. Currently, his work focuses on the security and fairness of decentralized applications and blockchain systems, as well as the robustness and dependability of AI systems. His work in these areas won four ACM Distinguished Paper Awards and two Best Artifact Awards at top-tier conferences, including ASE'15, ICSME'20, FSE'21, ISSTA'22, and ASE'23.`
+    },
+    {
         title: 'Generating Domain-Specific Tests via LLM-based Conversation with Code Repository',
         speaker: 'Binhang Qi',
         abstract: `Software testing has been a long-standing challenge in the software engineering community. While automatic test generators like EvoSuite (focused on branch coverage) and LLM-based solutions (focused on code generation) show promising results, they often fall short when it comes to incorporating project-specific domain knowledge. This gap makes the generated tests less practical and harder to pass code review or be integrated into a software product.
@@ -121,7 +133,7 @@ In this talk, I will share our work DTester, an LLM-based test generator designe
         title: 'CoEdPilot: Recommending Code Edits with Learned Prior Edit Relevance, Project-wise Awareness, and Interactive Nature',
         speaker: 'Chenyan Liu',
         abstract: 'Incremental code edits are more frequent than generating new code in software projects. To automate this process, existing language model-based solutions focus primarily on generating edit solutions based on given location and relevant prior edits. However, editing tasks can be more complicated: It is non-trivial to infer the subsequent edit location, as the scope of edit ripple effect can be the whole project. Moreover, editing sessions may contain multiple (ir)relevant edits. In this talk, I will share our work CoEdPilot, a LLM-driven framework for code evolution assistance. CoEdPilot orchestrates a set of neural Transformers, for discriminating relevant edits, monitoring the ripple effects of edits, exploring their interactive natures and generating edit solution. We also implement CoEdPilot as a VS Code extension for user-friendly interaction.',
-        bio: 'Chenyan Liu is currently a PhD student at School of Computing, National University of Singapore. He is supervised by Dr. Yun LIN, Dr. Jin Song DONG and Dr. ZhiYong HUANG. He received his Bachelor’s degree at Huazhong University of Science and Technology in 2021 and Master’s degree at National University of Singapore in 2023. His research focuses on the design and evaluation of code evolution systems.'
+        bio: `Chenyan Liu is currently a PhD student at School of Computing, National University of Singapore. He is supervised by Dr. Yun LIN, Dr. Jin Song DONG and Dr. ZhiYong HUANG. He received his Bachelor's degree at Huazhong University of Science and Technology in 2021 and Master's degree at National University of Singapore in 2023. His research focuses on the design and evaluation of code evolution systems.`
     }
     
 ]
@@ -133,17 +145,7 @@ const sleep = async (ms) => {
     await p;
 }
 
-// create numbers
-const talkChoicesWrapper = document.querySelector('.talk-choices');
-talkInfoList.forEach((talkInfo, i) => {
-    const numElement = document.createElement('li');
-    numElement.classList.add('inline-round-text');
-    numElement.innerHTML = `${i + 1}`;
-    talkChoicesWrapper.append(numElement);
-})
-
 // add control to numbers
-const talkChoicesElements = document.querySelectorAll('.talk-choices > li');
 const talksSectionElement = document.getElementById('talks-section');
 let currentTalkNum = undefined;
 const switchToTalk = async (num, doScroll) => {
@@ -154,14 +156,6 @@ const switchToTalk = async (num, doScroll) => {
     if (num == currentTalkNum) return; 
     currentTalkNum = num;
 
-    talkChoicesElements.forEach((element, i) => {
-        if (i == num) {
-            element.classList.remove('outline');
-        } else {
-            element.classList.add('outline');
-        }
-    });
-
     talkContentElement.classList.add('fading');
     await sleep(200);
     const talkInfo = talkInfoList[num];
@@ -171,15 +165,13 @@ const switchToTalk = async (num, doScroll) => {
         }
     }
     talkContentElement.classList.remove('fading');
+
+    const cardElement = talkIndexToCard.get(num);
+    speakerCardElements.forEach(e => {
+        e.classList.remove('selected');
+    })
+    cardElement.classList.add('selected');
 }
-
-talkChoicesElements.forEach((element, i) => {
-    element.addEventListener('click', () => {
-        switchToTalk(i, true);
-    });
-});
-
-switchToTalk(0);
 
 /*
     title scaling animation
@@ -225,11 +217,14 @@ const getNameFromSpeakerCard = (cardElement) => {
     .trim();
 }
 
+const talkIndexToCard = new Map();
+
 const speakerCardElements = document.querySelectorAll('.speaker-card');
 speakerCardElements.forEach((element) => {
     const name = getNameFromSpeakerCard(element);
     const talkIndex = nameToTalkIndex.get(name);
     if (talkIndex === undefined) return;
+    talkIndexToCard.set(talkIndex, element);
 
     element.addEventListener('mouseover', () => {
         element.classList.add('active');
@@ -239,7 +234,8 @@ speakerCardElements.forEach((element) => {
     })
 
     element.addEventListener('click', () => {
-        switchToTalk(talkIndex, true);
+        switchToTalk(talkIndex);
     });
 })
 
+switchToTalk(0);
