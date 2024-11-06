@@ -3,6 +3,7 @@ html, body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     --primary-color: chocolate;
     --secondary-color: rgb(0, 94, 255);
+    --light-black: #191919;
 }
 
 body {
@@ -20,7 +21,12 @@ header {
     display: flex;
     justify-content: center;
 
-    transition: background 0.2s;
+    transition: background 0.1s;
+}
+
+.nav-text {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
 }
 
 .inline-round-text {
@@ -44,7 +50,7 @@ header {
 
 .talk-choices .inline-round-text, .talk-choices .inline-round-text.outline:hover {
     border: 1px solid white;
-    transition: all 0.2s;
+    transition: all 0.1s;
     cursor: pointer;
 }
 
@@ -82,7 +88,7 @@ header {
     box-sizing: border-box;
 
     cursor: pointer;
-    transition: background 0.2s;
+    transition: background 0.1s;
 }
 
 .nav-bar ul li:hover {
@@ -110,7 +116,8 @@ header {
     overflow: hidden;
     background-size: cover;
     background-position: 50% 50%;
-    background: linear-gradient(180deg, rgba(181,108,0,1) 0%, rgba(255,188,65,1) 90%, rgba(252,183,52,0) 100%);
+    /* background: linear-gradient(180deg, rgba(181,108,0,1) 0%, rgba(255,188,65,1) 90%, rgba(252,183,52,0) 100%); */
+    background-image: url('assets/smu-building.jpg');
 }
 
 .title h1 {
@@ -172,7 +179,7 @@ main {
 }
 
 main > section:not(:last-child) {
-    margin-bottom: 3em;
+    margin-bottom: 2em;
 }
 
 .section-content {
@@ -202,6 +209,7 @@ main > section:not(:last-child) {
 .section-title {
     text-transform: uppercase;
     text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: x-large;
     margin: 0;
     padding: 1.5em 0;
@@ -211,13 +219,13 @@ main > section:not(:last-child) {
     margin: 0.8em;
     padding: 1.5em;
     width: 12em;
-    min-height: 21.27em;
+    min-height: 20em;
 
     box-shadow: 4px 4px 3px grey;
     border: 2px solid rgba(211, 211, 211, 0.6);
-    border-radius: 5px;
+    border-radius: 1em;
 
-    transition: border 0.2s;
+    transition: border 0.1s;
 }
 
 .speaker-card.active {
@@ -233,25 +241,26 @@ main > section:not(:last-child) {
 .speaker-name > a {
     text-decoration: none;
     color: black;
-    transition: color 0.2s;
+    transition: color 0.1s;
 }
 
 .speaker-name > a:hover {
     color: var(--secondary-color);
 }
 
-.speaker-name > a > span {
+.speaker-name > a > .last-name {
+    text-transform: uppercase;
+}
+
+.speaker-name > a > .material-symbols-outlined {
     font-size: 1.2em;
     vertical-align: text-top;
     opacity: 0;
-    transition: opacity 0.2s;
+    transition: opacity 0.1s;
 }
 
-.speaker-name > a > span.active {
+.speaker-name > a > .material-symbols-outlined.active {
     opacity: 1;
-}
-
-.speaker-title {
 }
 
 .speaker-org {
@@ -305,7 +314,7 @@ main > section:not(:last-child) {
     max-width: 80em;
     height: fit-content;
     
-    transition: opacity 0.2s;
+    transition: opacity 0.1s;
 }
 
 .talk-content.fading {
@@ -363,6 +372,44 @@ main > section:not(:last-child) {
     margin: 0 2em;
 }
 
-.organization-item img {
-    max-width: 15em;
+.organization-item > a {
+    display: inline-block;
+    height: 8em;
+}
+
+.organization-item > a > img {
+    max-height: 100%;
+}
+
+footer {
+    background-color: var(--light-black);
+    color: white;
+    padding: 2em 2em;
+}
+
+.footer-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* .contact-section-title {
+    font-weight: bold;
+    height: 2em;
+    text-transform: uppercase;
+}
+
+.contact-name {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    display: inline-block;
+    width: 7em;
+}
+
+.contact-title {
+    font-style: italic;
+} */
+
+.copyright {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }

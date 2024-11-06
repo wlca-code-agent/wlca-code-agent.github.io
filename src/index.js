@@ -200,7 +200,7 @@ const scaleTitle = () => {
 window.addEventListener('scroll', () => { scaleTitle(); });
 
 document.querySelectorAll('.speaker-name > a').forEach((a) => {
-    const homeIcon = a.querySelector('span');
+    const homeIcon = a.querySelector('.material-symbols-outlined');
     a.addEventListener('mouseover', () => {
         homeIcon.classList.add('active');
     });
