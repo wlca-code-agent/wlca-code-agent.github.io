@@ -220,21 +220,20 @@ main > section:not(:last-child) {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: x-large;
     margin: 0;
-    padding: 1.5em 0;
+    padding: 1.2em 0;
+}
+
+#speakers-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #speakers-section .section-content {
     align-items: flex-start;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
-}
-
-.card-list {
-    flex: 1 1 30em;
-}
-
-.talk-content-wrapper {
-    flex: 1 1 30em;
+    align-items: center;
 }
 
 .speaker-card {
@@ -248,6 +247,10 @@ main > section:not(:last-child) {
     border-radius: 1em;
 
     transition: border 0.1s;
+}
+
+#speakers-section .speaker-card {
+    cursor: pointer;
 }
 
 .speaker-card.active, .speaker-card.selected {
@@ -287,6 +290,32 @@ main > section:not(:last-child) {
 
 .speaker-org {
     margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.info-item {
+    margin-top: 0.5em;
+    font-size: smaller;
+}
+
+.info-item > a {
+    text-decoration: none;
+    color: black;
+    transition: color 0.1s;
+}
+
+.info-item > a:hover {
+    color: var(--secondary-color);
+}
+
+.info-item > a {
+    line-height: 1.6em;
+}
+
+.info-item > a > .material-symbols-outlined {
+    font-size: 1.5em;
+    margin-right: 0.2em;
+    vertical-align: bottom;
 }
 
 .photo-wrapper {
@@ -332,10 +361,11 @@ main > section:not(:last-child) {
 }
 
 .talk-content {
-    margin: 2em 2em;
+    margin: 2em 2em 1em;
     padding: 0 1.5em;
     border-left: 5px solid var(--secondary-color);
-    height: fit-content;
+    min-height: 30em;
+    max-width: 60em;
     
     transition: opacity 0.1s;
 }
@@ -345,7 +375,7 @@ main > section:not(:last-child) {
 }
 
 .talk-content-section:not(:first-child) {
-    margin-top: 1em;
+    margin-top: 1.5em;
 }
 
 .talk-content-section > div:first-child {
@@ -360,9 +390,17 @@ main > section:not(:last-child) {
     font-size: x-large;
 }
 
+#schedule-section .section-content {
+    flex-direction: column;
+    align-items: center;
+}
+
 .schedule-table {
     border-collapse: collapse;
-    width: 100%
+    width: 100%;
+    max-width: 80em;
+
+    /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
 }
 
 .schedule-table th, .schedule-table td {
@@ -378,12 +416,33 @@ main > section:not(:last-child) {
     border-bottom: 1px solid lightgray;
 }
 
+.schedule-table tbody td:first-child {
+    background-color: #f0f8ff;
+}
+
+.schedule-table tbody td:nth-child(2) {
+    background-color: #faebd7;
+}
+
+.schedule-table tbody td:nth-child(3):not(:last-child) {
+    background-color: #e6e6fa;
+}
+
+.schedule-table tbody td:last-child {
+    background-color: #fff0f5;
+}
+
+#contact-section .section-content {
+    flex-direction: column;
+}
+
 .organization-list {
     display: flex;
     list-style-type: none;
     justify-content: center;
+    align-items: center;
 
-    padding: 0.5em;
+    padding: 1em;
     margin: 0;
 }
 
@@ -393,7 +452,7 @@ main > section:not(:last-child) {
 
 .organization-item > a {
     display: inline-block;
-    height: 8em;
+    height: 12em;
 }
 
 .organization-item > a > img {

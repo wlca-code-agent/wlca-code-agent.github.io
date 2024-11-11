@@ -146,15 +146,15 @@ const sleep = async (ms) => {
 }
 
 // add control to numbers
+const speakersCardListElement = document.querySelector('#speakers-section .card-list');
 const talkContentWrapperElement = document.querySelector('.talk-content-wrapper');
 const talkAbstractElement = document.querySelectorAll('.talk-abstract-text')[0];
 let currentTalkNum = undefined;
 const switchToTalk = async (num, doScroll) => {
-    if (doScroll) {
-        ignoringHeaderScrollTo(talkContentWrapperElement);
-    } else if (!talkAbstractElement.getBoundingClientRect().top < 0
-        || talkAbstractElement.getBoundingClientRect().top > window.innerHeight) {
-        ignoringHeaderScrollTo(talkContentWrapperElement);
+    if (doScroll &&
+        (!talkAbstractElement.getBoundingClientRect().top < 0
+        || talkAbstractElement.getBoundingClientRect().top > window.innerHeight)) {
+        ignoringHeaderScrollTo(speakersCardListElement);
     }
 
     if (num == currentTalkNum) return; 
@@ -242,8 +242,18 @@ speakerCardElements.forEach((element) => {
     })
 
     element.addEventListener('click', () => {
-        switchToTalk(talkIndex);
+        switchToTalk(talkIndex, true);
     });
 })
 
 switchToTalk(0);
+
+/* Prepare agenda */
+const rows = document.querySelectorAll('.schedule-table tbody tr');
+rows.forEach((r, i) => {
+    const speakerNameTd = r.querySelector('td:nth-child(2)');
+    const topicTd = r.querySelector('td:last-child');
+    
+    speakerNameTd.textContent = talkInfoList[i].speaker;
+    topicTd.textContent = talkInfoList[i].title;
+});
