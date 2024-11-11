@@ -185,7 +185,7 @@ main {
 }
 
 main > section:not(:last-child) {
-    margin-bottom: 2em;
+    margin-bottom: 3em;
 }
 
 .section-content {
@@ -441,7 +441,7 @@ main > section:not(:last-child) {
     justify-content: center;
     align-items: center;
 
-    padding: 1em;
+    padding: 0 1em 1em;
     margin: 0;
 }
 
