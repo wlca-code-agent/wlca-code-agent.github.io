@@ -53,8 +53,6 @@ header {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .talk-choices .inline-round-text, .talk-choices .inline-round-text.outline:hover {
@@ -204,8 +202,9 @@ main > section:not(:last-child) {
 }
 
 .overview-text {
-    padding: 2em;
+    padding: 1em;
     font-size: larger;
+    max-width: 80em;
 }
 
 .overview-figure {
