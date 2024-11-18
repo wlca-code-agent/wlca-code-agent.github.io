@@ -114,7 +114,7 @@ header {
 }
 
 .title {
-    padding: 10em 0 14em 0;
+    padding: 10em 0 15em 0;
     position: relative;
 
     display: flex;
@@ -185,7 +185,7 @@ header {
 }
 
 main {
-    padding: 2em 5em 1em;
+    padding: 1em 5em 1em;
 }
 
 main > section {
