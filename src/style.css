@@ -74,6 +74,8 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-around;
+
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .nav-bar ul {
@@ -125,6 +127,8 @@ header {
     background-position: 50% 50%;
     /* background: linear-gradient(180deg, rgba(181,108,0,1) 0%, rgba(255,188,65,1) 90%, rgba(252,183,52,0) 100%); */
     background-image: url('assets/smu-building.jpg');
+
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .title h1 {
@@ -181,10 +185,10 @@ header {
 }
 
 main {
-    padding: 0 5em 3em;
+    padding: 2em 5em 1em;
 }
 
-main > section:not(:last-child) {
+main > section {
     margin-bottom: 3em;
 }
 
@@ -236,13 +240,13 @@ main > section:not(:last-child) {
 }
 
 .speaker-card {
-    margin: 0.8em;
+    margin: 0.8em 1em;
     padding: 1.5em;
     width: 12em;
     min-height: 20em;
 
-    box-shadow: 4px 4px 3px grey;
-    border: 5px solid rgba(211, 211, 211, 0.6);
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3), 0 0 12px rgba(0, 0, 0, 0.1);
+    border: 5px solid transparent;
     border-radius: 1em;
 
     transition: border 0.1s;
