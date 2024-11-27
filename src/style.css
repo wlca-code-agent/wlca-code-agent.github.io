@@ -194,6 +194,8 @@ main > section {
 
 .section-content {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     width: 100%;
 }
@@ -233,8 +235,6 @@ main > section {
 }
 
 #speakers-section .section-content {
-    align-items: flex-start;
-    flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
 }
@@ -248,8 +248,8 @@ main > section {
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3), 0 0 12px rgba(0, 0, 0, 0.1);
     border: 5px solid transparent;
     border-radius: 1em;
-
-    transition: border 0.1s;
+    
+    transition: border 0.1s, box-shadow 0.1s;
 }
 
 #speakers-section .speaker-card {
@@ -257,6 +257,7 @@ main > section {
 }
 
 .speaker-card.active, .speaker-card.selected {
+    box-shadow: 2px 2px 6px rgba(0, 94, 255, 0.3), 0 0 12px rgba(0, 94, 255, 0.1);
     border: 5px solid var(--secondary-color);
 }
 
@@ -293,7 +294,6 @@ main > section {
 
 .speaker-org {
     margin-top: 1em;
-    margin-bottom: 1em;
 }
 
 .info-item {
@@ -387,9 +387,60 @@ main > section {
     font-size: x-large;
 }
 
-#schedule-section .section-content {
+.location-text {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: xx-large;
+    margin-top: 0.2em;
+}
+
+.location-text.time {
+    display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+
+    font-size: x-large;
+    margin-top: 1em;
+    padding: 0.2em;
+    border-radius: 0.3em;
+    
+    background-color: #f0f8ff;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3), 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
+.location-block {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.location-sub-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.link-to-google-map {
+    margin-left: 2em;
+    padding: 1em;
+
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.link-to-google-map > img {
+    height: 5em;
+    opacity: 0.3;
+    transition: opacity 0.1s, filter 0.1s;
+}
+
+.link-to-google-map:hover > img {
+    opacity: 1.0;
+    filter: drop-shadow(2px 2px 6px rgba(0, 0, 0, 0.1));
 }
 
 .schedule-table {
@@ -427,10 +478,6 @@ main > section {
 
 .schedule-table tbody td:last-child {
     background-color: #fff0f5;
-}
-
-#contact-section .section-content {
-    flex-direction: column;
 }
 
 .organization-list {
