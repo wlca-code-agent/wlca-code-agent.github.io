@@ -146,15 +146,13 @@ const sleep = async (ms) => {
 }
 
 // add control to numbers
-const speakersCardListElement = document.querySelector('#speakers-section .card-list');
+const speakerSectionTitleElement = document.querySelector('#speakers-section .section-title');
 const talkContentWrapperElement = document.querySelector('.talk-content-wrapper');
 const talkAbstractElement = document.querySelectorAll('.talk-abstract-text')[0];
 let currentTalkNum = undefined;
 const switchToTalk = async (num, doScroll) => {
-    if (doScroll &&
-        (!talkAbstractElement.getBoundingClientRect().top < 0
-        || talkAbstractElement.getBoundingClientRect().top > window.innerHeight)) {
-        ignoringHeaderScrollTo(speakersCardListElement);
+    if (doScroll) {
+        ignoringHeaderScrollTo(speakerSectionTitleElement);
     }
 
     if (num == currentTalkNum) return; 
