@@ -15,6 +15,17 @@ const ignoringHeaderScrollTo = (element) => {
         behavior: 'smooth'
     });
 }
+const ignoringHeaderScrollIntoView = (element) => {
+    if (ignoringHeaderInViewport(element)) {
+        ignoringHeaderScrollTo(element);
+    }
+}
+const ignoringHeaderInViewport = (element) => {
+        return (element.getBoundingClientRect().top - header.offsetHeight < 0
+            || element.getBoundingClientRect().top > window.innerHeight)
+}
+
+const isMediaWiderEnough = () => window.matchMedia("(min-width: 1576px)").matches;
 
 // setup links to nav bar items
 // forward links:
@@ -152,7 +163,11 @@ const talkAbstractElement = document.querySelectorAll('.talk-abstract-text')[0];
 let currentTalkNum = undefined;
 const switchToTalk = async (num, doScroll) => {
     if (doScroll) {
-        ignoringHeaderScrollTo(speakerSectionTitleElement);
+        if (isMediaWiderEnough()) {
+            ignoringHeaderScrollTo(speakerSectionTitleElement);
+        } else {
+            ignoringHeaderScrollIntoView(talkContentWrapperElement);
+        }
     }
 
     if (num == currentTalkNum) return; 

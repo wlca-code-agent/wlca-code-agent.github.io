@@ -1,5 +1,6 @@
 html, body {
     margin: 0;
+    width: 100%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     --primary-color: chocolate;
     --secondary-color: rgb(0, 94, 255);
@@ -138,8 +139,8 @@ header {
 }
 
 .title h2 {
-    font-size: 4em;
-    margin: 20px;
+    font-size: 3em;
+    margin: 0.3em;
 }
 
 .title-text, .title-desc {
@@ -154,8 +155,12 @@ header {
     z-index: -1;
 }
 
-.title-desc {
+.title-text {
     font-size: xx-large;
+}
+
+.title-desc {
+    font-size: x-large;
     font-weight: bold;
 
     display: grid;
@@ -189,7 +194,8 @@ main {
 }
 
 main > section {
-    margin-bottom: 3em;
+    margin-top: 2em;
+    margin-bottom: 5em;
 }
 
 .section-content {
@@ -225,7 +231,7 @@ main > section {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: x-large;
     margin: 0;
-    padding: 1.2em 0;
+    padding: 1em 0 0.6em;
 }
 
 #speakers-section {
@@ -391,6 +397,7 @@ main > section {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: xx-large;
     margin-top: 0.2em;
+    text-align: center;
 }
 
 .location-text.time {
@@ -418,6 +425,7 @@ main > section {
 
 .location-block {
     width: 100%;
+    padding: 1em 0;
 
     display: flex;
     align-items: center;
@@ -449,6 +457,12 @@ main > section {
 .link-to-google-map:hover > img {
     opacity: 1.0;
     filter: drop-shadow(2px 2px 6px rgba(0, 0, 0, 0.1));
+}
+
+.schedule-date {
+    font-size: x-large; 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+    padding: 0.5em 0;
 }
 
 .schedule-table {
@@ -489,6 +503,9 @@ main > section {
 }
 
 .organization-list {
+    width: 100%;
+    flex-wrap: wrap;
+
     display: flex;
     list-style-type: none;
     justify-content: center;
@@ -496,6 +513,8 @@ main > section {
 
     padding: 0 1em 1em;
     margin: 0;
+
+    overflow: hidden;
 }
 
 .organization-item {
@@ -504,11 +523,11 @@ main > section {
 
 .organization-item > a {
     display: inline-block;
-    height: 12em;
 }
 
 .organization-item > a > img {
-    max-height: 100%;
+    max-height: 12em;
+    max-width: 100%;
 }
 
 footer {
@@ -542,4 +561,35 @@ footer {
 
 .copyright {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+@media screen and (max-width: 576px) {
+    html, body {
+        font-size: 12px;
+    }
+
+    .nav-bar {
+        font-size: smaller;
+    }
+
+    .title {
+        padding: 20em 0 30em 0;
+        font-size: 6px;
+    }
+
+    .section-title {
+        font-size: large;
+    }
+
+    .talk-content-section.talk-title-text > div:first-child {
+        font-size: large;
+    }
+    
+    .location-text {
+        font-size: 22px;
+    }
+
+    .schedule-date {
+        font-size: large;
+    }
 }
