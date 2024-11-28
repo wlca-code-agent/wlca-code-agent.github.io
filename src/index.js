@@ -15,17 +15,17 @@ const ignoringHeaderScrollTo = (element) => {
         behavior: 'smooth'
     });
 }
-const ignoringHeaderScrollIntoView = (element) => {
-    if (ignoringHeaderInViewport(element)) {
+const ignoringHeaderScrollIntoView = (element, refElement = element) => {
+    if (ignoringHeaderNotInViewport(refElement)) {
         ignoringHeaderScrollTo(element);
     }
 }
-const ignoringHeaderInViewport = (element) => {
+const ignoringHeaderNotInViewport = (element) => {
         return (element.getBoundingClientRect().top - header.offsetHeight < 0
             || element.getBoundingClientRect().top > window.innerHeight)
 }
 
-const isMediaWiderEnough = () => window.matchMedia("(min-width: 1576px)").matches;
+const isMediaWideEnough = () => window.matchMedia("(min-width: 1576px)").matches;
 
 // setup links to nav bar items
 // forward links:
@@ -159,14 +159,15 @@ const sleep = async (ms) => {
 // add control to numbers
 const speakerSectionTitleElement = document.querySelector('#speakers-section .section-title');
 const talkContentWrapperElement = document.querySelector('.talk-content-wrapper');
+const talkTitleElement = document.querySelector('.talk-content-wrapper .talk-title-text');
 const talkAbstractElement = document.querySelectorAll('.talk-abstract-text')[0];
 let currentTalkNum = undefined;
 const switchToTalk = async (num, doScroll) => {
     if (doScroll) {
-        if (isMediaWiderEnough()) {
+        if (isMediaWideEnough()) {
             ignoringHeaderScrollTo(speakerSectionTitleElement);
         } else {
-            ignoringHeaderScrollIntoView(talkContentWrapperElement);
+            ignoringHeaderScrollIntoView(talkContentWrapperElement, talkTitleElement);
         }
     }
 
@@ -174,7 +175,7 @@ const switchToTalk = async (num, doScroll) => {
     currentTalkNum = num;
 
     talkContentElement.classList.add('fading');
-    await sleep(200);
+    await sleep(100);
     const talkInfo = talkInfoList[num];
     if (talkInfo) {
         for (const k in talkInfoElements) {
