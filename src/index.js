@@ -262,11 +262,13 @@ speakerCardElements.forEach((element) => {
 switchToTalk(0);
 
 /* Prepare agenda */
+const agendaList = talkInfoList.slice();
+agendaList.splice(3, 0, { title: 'Tea Break', speaker: '', abstract: '', bio: '' });
 const rows = document.querySelectorAll('.schedule-table tbody tr');
 rows.forEach((r, i) => {
     const speakerNameTd = r.querySelector('td:nth-child(2)');
     const topicTd = r.querySelector('td:last-child');
     
-    speakerNameTd.textContent = talkInfoList[i].speaker;
-    topicTd.textContent = talkInfoList[i].title;
+    speakerNameTd.textContent = agendaList[i].speaker;
+    topicTd.textContent = agendaList[i].title;
 });

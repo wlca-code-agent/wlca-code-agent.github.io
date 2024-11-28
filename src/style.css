@@ -194,8 +194,12 @@ main {
 }
 
 main > section {
-    margin-top: 2em;
+    margin-top: 1em;
     margin-bottom: 5em;
+}
+
+main > section:last-child {
+    margin-bottom: 3em;
 }
 
 .section-content {
@@ -449,7 +453,7 @@ main > section {
 }
 
 .link-to-google-map > img {
-    height: 5em;
+    height: 3em;
     opacity: 0.3;
     transition: opacity 0.1s, filter 0.1s;
 }
